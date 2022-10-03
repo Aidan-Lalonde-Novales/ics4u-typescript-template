@@ -16,14 +16,6 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@main
 
-      # remove section if you do not have any html, js or ts files!
-      - name: Prettify code
-        uses: Mr-Coxall/prettier_action@main
-        with:
-          # run Prettier and change code that needs fixing, before next section
-          prettier_options: --write **/*.{html,css,js,ts,jsx,tsx,json}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Run GitHub Super Linter
         uses: github/super-linter@main
         env:
